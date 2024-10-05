@@ -1,4 +1,7 @@
 void main() {
+
+  /** ------------------------------  타입과 선언  -------------------------------- */
+
   // 변수 선언 시 var로 선언하는 것은 관습적으로 함수, 메서드 등 내부의 지역변수로서 선언할 때 많이 사용됨
   var name = "zeriong";
   name = "제리옹";
@@ -32,6 +35,16 @@ void main() {
 
   print("hello, my name is " + name);
 
+  // Null albe 선언 (typescript의 ?를 사용하는 옵셔널 체이닝과 같음)
+  String? alias; // string 또는 null이 가능한 형태
+  alias = "potato";
+  alias = null;
 
+  // 위에서 활용한 dynamic 타입과 마찬가지로 if문을 통해서 타입을 가정할 수 있어야 제공 메서드, api 활용 가능하다.
+  if (alias != null) {
+    alias.isNotEmpty;
+  }
+
+  /** ------------------------------  ㅡㅡㅡㅡㅡㅡ  -------------------------------- */
 
 }
