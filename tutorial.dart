@@ -52,6 +52,14 @@ void main() {
   final constants = "this is a const";
   // constants = "nope"; // 컴파일 에러 발생
 
+  // late는 초기화를 늦춰주는 역할을 한다. (값 초기화 이전에 발생하는 컴파일 에러를 방지해줌)
+  // 아래 예시는 통신을 통해 상수로 활용할 값을 기다렸다가 통신 성공 시 지정해줄 때 이와 같이 활용할 수 있다.
+  late final awaitResponseConst;
+  awaitResponseConst = "i'm not modify";
+  /** 이외의 다양한 케이스에 의한 late를 사용할 수도 있는데 이는 lateEx.dart 파일에 예시를 작성했다. */
+
+
+
   /** ------------------------------  ㅡㅡㅡㅡㅡㅡ  -------------------------------- */
 
 }
