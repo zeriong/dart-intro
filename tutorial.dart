@@ -39,11 +39,14 @@ void main() {
   String? alias; // string 또는 null이 가능한 형태
   alias = "potato";
   alias = null;
-
   // 위에서 활용한 dynamic 타입과 마찬가지로 if문을 통해서 타입을 가정할 수 있어야 제공 메서드, api 활용 가능하다.
   if (alias != null) {
     alias.isNotEmpty;
   }
+  // 또는 아래 처럼 활용 가능
+  // typescript에서 활용할 때 처럼 있다면 이어서 실행될 것이고, 아닌 경우 그대로 멈추게 된다.
+  alias?.isNotEmpty;
+  alias?.length;
 
   /** ------------------------------  ㅡㅡㅡㅡㅡㅡ  -------------------------------- */
 
