@@ -48,6 +48,10 @@ void main() {
   alias?.isNotEmpty;
   alias?.length;
 
+  // final을 활용한 상수 지정 (java의 final과 같다.)
+  final constants = "this is a const";
+  // constants = "nope"; // 컴파일 에러 발생
+
   /** ------------------------------  ㅡㅡㅡㅡㅡㅡ  -------------------------------- */
 
 }
