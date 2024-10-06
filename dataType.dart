@@ -11,5 +11,18 @@ void main() {
   number = 1.2;
   number = 0;
 
+  var numbers = [1, 2, 3, 4]; // var를 활용한 list 선언 방식
+  List<num> nums = [1, 2, 3, 4]; // 타입 명시 list 선언 방식
 
+  numbers.add(500); // JS에서 push와 같은 개념
+
+  // 프린트
+  print("numbers add 500: " + numbers.toString()); // list 출력
+
+  // collection if를 활용하면 하단에서 별도의 조건문 + add 매서드를 활용하지 않을 수 있다.
+  var isBool = true;
+  var numbers2 = [1, 2, 3, if (isBool) 400];
+
+  // collection if 활용
+  print("numbers2 add 400 : " + numbers2.toString());
 }
