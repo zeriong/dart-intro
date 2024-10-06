@@ -25,4 +25,26 @@ void main() {
 
   // collection if 활용
   print("numbers2 add 400 : " + numbers2.toString());
+
+  var name2 = "zeriong";
+  var age = 20;
+
+  // String Interpolation (JS에서 템플릿리터럴 같은 방식)
+  // 계산이 필요하다면 내부에 리터럴을 넣어서 계산하고 단순 변수만을 담을 때는 $ 후에 변수명만 넣어주면 됨.
+  var greeting = "hi, my name is $name2, and i'm ${age + 9}";
+  // 작은 따옴표 중복으로 문제가 될 경우 큰 따옴표를 쓰거나 이스케이프를 통해 해결
+  greeting = 'hi, my name is $name2, and i\'m ${age + 9}';
+
+  // string interpolation print
+  print(greeting);
+
+  // String Interpolation + collection for 예제코드
+  var oldFriends = ["chanChan", "seoGwon"];
+  var newFriends = [
+    "zeroStone",
+    "spaceBeaver",
+    for (var friend in oldFriends) "⭐$friend",
+  ];
+  // 오래된 친구만 별 이모지를 추가하여 별도로 체크
+  print(newFriends);
 }
