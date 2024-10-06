@@ -70,4 +70,17 @@ void main() {
   // print
   print(player);
   print(declarePlayer);
+
+  /**---------------------------- Sets에 대한 학습 ---------------------------- */
+  // JS에서 new Set()과 유사하고 결국 JS의  object와 같다고 볼 수 있다.
+  // Set이 가지는 값은 모두 유니크하다. (아무리 추가해도 중복된다면 추가되지 않음)
+  var sets = {1, 2, 3, 4};
+  sets.add(1);
+  sets.add(1);
+  sets.add(1);
+  sets.add(1);
+  sets.add(1);
+
+  // add를 5번 했지만 추가 되지 않는 것을 확인
+  print(sets);
 }
