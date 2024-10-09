@@ -3,12 +3,17 @@
 void sayHello(String name) {
   print("Hello $name nice to meet you!");
 }
+
 // 문자열(String)을 반환하는 함수
 String sayHelloReturnString(String name) {
   return "Hello $name?";
 }
+
 // 화살표 함수를 활용한다면 즉시 리턴 가능하다
 String sayHelloArrowFunction(String name) => "Hello $name?";
+
+// 화살표 함수를 활용한 좋은 예시(코드 최적화가 가능해진 예)
+num plus(num a, num b) => a + b;
 
 /**  */
 void main() {
@@ -19,4 +24,7 @@ void main() {
 
   // 화살표 함수를 활용한 예
   print(sayHelloArrowFunction("Arrow man"));
+
+  // plus 함수 프린트
+  print("plus result: ${plus(5, 7)}");
 }
