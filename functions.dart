@@ -17,10 +17,17 @@ num plus(num a, num b) => a + b;
 // named argument 를 활용한 예시
 // default value를 지정하지 않는다면 optional chaining을 통해 null이 허용되게 만들어야 함.
 // 하지만 이는 Hello my name is null, 이런 형태로 적용되기 때문에 적합하지 않음
+// 함수 실행 시 파라미터를 작성하지 않고 실행 가능할 수 있기 때문에 required를 넣어준다
 String introduceUser({
-  String name = "Minsu",
-  int age = 20,
-  String country = "GongSaPhan",
+  // default value를 적어준 예
+  // String name = "Minsu",
+  // int age = 20,
+  // String country = "GongSaPhan",
+
+  // required를 작성해주면 파라미터로 전달받는 것이 없다면 즉시 컴파일 에러를 발생시켜줌
+  required String name,
+  required int age,
+  required String country,
 }) {
   return "Hello my name is $name, I'm $age years old and from $country";
 }
