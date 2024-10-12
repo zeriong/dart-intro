@@ -38,7 +38,15 @@ String introduceUserOnOptionalPositionalParam(String name, int age,
   return "Hello my name is $name, I'm $age years old and from $country";
 }
 
-/**  */
+// 연산자 활용 가능 (??는 ES6에서 활용되는 연산자와 같다)
+String capitalizeName(String? name) => name?.toUpperCase() ?? "NONAME";
+// 또한 ??= 라는 방식으로 할당에 연산자를 포함할 수 있음
+String capitalizeName2(String? name) {
+  name ??= "NONAME";
+  return name.toUpperCase();
+}
+
+/** 출력 */
 void main() {
   sayHello("zeriong");
 
@@ -56,4 +64,8 @@ void main() {
 
   // optional positional parameter를 활용한 프린트 (country 파라미터가 없어도 작동됨)
   print(introduceUserOnOptionalPositionalParam("ZeroStone", 4));
+
+  // 연산자를 활용하여 null인경우 두 함수 모두 "NONAME"이라는 값을 반환하고 있음
+  print(capitalizeName(null));
+  print(capitalizeName2(null));
 }
