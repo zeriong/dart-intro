@@ -46,6 +46,13 @@ String capitalizeName2(String? name) {
   return name.toUpperCase();
 }
 
+// typedef를 활용하여 타입을 지정할 수 있음 (JS의 interface, type과 같은 것)
+typedef TUser = Map<String, String>;
+// type과 유사하게 활용 가능
+String createUserStatus(TUser userInfo) {
+  return "this user name is \"${userInfo['name']}\" and hobby: ${userInfo['hobby']}, age: ${userInfo['age']}";
+}
+
 /** 출력 */
 void main() {
   sayHello("zeriong");
@@ -68,4 +75,8 @@ void main() {
   // 연산자를 활용하여 null인경우 두 함수 모두 "NONAME"이라는 값을 반환하고 있음
   print(capitalizeName(null));
   print(capitalizeName2(null));
+
+  // typedef를 활용하여 타입지정한 예시
+  print(createUserStatus(
+      {"name": "zeriong", "hobby": "programming", "age": "29"}));
 }
