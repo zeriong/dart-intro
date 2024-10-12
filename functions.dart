@@ -32,6 +32,12 @@ String introduceUser({
   return "Hello my name is $name, I'm $age years old and from $country";
 }
 
+// optional positional parameter를 활용하기 위해선 반드시 대괄호로 묶어야 함
+String introduceUserOnOptionalPositionalParam(String name, int age,
+    [String? country = "Korea"]) {
+  return "Hello my name is $name, I'm $age years old and from $country";
+}
+
 /**  */
 void main() {
   sayHello("zeriong");
@@ -47,4 +53,7 @@ void main() {
 
   // named argument를 활용한 예시 프린트
   print(introduceUser(age: 29, name: "zeriong", country: "Korea"));
+
+  // optional positional parameter를 활용한 프린트 (country 파라미터가 없어도 작동됨)
+  print(introduceUserOnOptionalPositionalParam("ZeroStone", 4));
 }
