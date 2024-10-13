@@ -13,6 +13,21 @@ class Player {
   }
 }
 
+class DynamicPlayerClass {
+  // final로 상수 선언
+  late final String name;
+  late int xp;
+
+  DynamicPlayerClass(String name, int xp) {
+    this.name = name;
+    this.xp = xp;
+  }
+
+  void status() {
+    print("name: \"${name}\", xp: $xp");
+  }
+}
+
 void main() {
   // dart는 new 생략이 가능하다
   var player = Player();
@@ -23,4 +38,10 @@ void main() {
 
   // immerName을 출력하는 매서드
   player.sayHello();
+
+  // 파라미터를 받는 인스턴스를 생성
+  var dynamicUser = DynamicPlayerClass("zeriong", 12000);
+  dynamicUser.status();
+  var dynamicUser2 = DynamicPlayerClass("zeriong222", 12222000);
+  dynamicUser2.status();
 }
