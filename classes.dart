@@ -13,17 +13,19 @@ class Player {
   }
 }
 
+/** 동적으로 파라미터를 받아 인스턴스를 생성하는 예 */
 class DynamicPlayerClass {
   // final로 상수 선언
-  late final String name;
-  late int xp;
+  final String name;
+  int xp;
 
   // DynamicPlayerClass(String name, int xp) {
   //   this.name = name;
   //   this.xp = xp;
   // }
 
-  // constructor 단순화
+  // constructor 단순화 (position이 매우 중요함.)
+  // 아래와 같이 단순화 하는 경우 late문을 생략해도 된다.
   DynamicPlayerClass(this.name, this.xp);
 
   void status() {
@@ -31,6 +33,28 @@ class DynamicPlayerClass {
   }
 }
 
+/** Named Argument 형태로 파라미터를 받아 인스턴스를 생성하는 예 */
+class NamedArgUserClass {
+  // final로 상수 선언
+  final String name;
+  int xp;
+  String team;
+  int age;
+
+  // named argument를 활용한 constructor
+  NamedArgUserClass({
+    required this.name,
+    required this.xp,
+    required this.team,
+    required this.age,
+  });
+
+  void status() {
+    print("name: \"$name\", xp: $xp, team: \"$team\", age: $age");
+  }
+}
+
+/** Main Method */
 void main() {
   // dart는 new 생략이 가능하다
   var player = Player();
@@ -47,4 +71,14 @@ void main() {
   dynamicUser.status();
   var dynamicUser2 = DynamicPlayerClass("zeriong222", 12222000);
   dynamicUser2.status();
+
+  // named argument Class example
+  var namedArgUserClass = NamedArgUserClass(
+    name: "ZeroStone",
+    xp: 20000,
+    team: "BiSeok",
+    age: 44,
+  );
+  // named argument Class status 출력
+  namedArgUserClass.status();
 }
