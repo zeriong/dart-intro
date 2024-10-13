@@ -18,10 +18,13 @@ class DynamicPlayerClass {
   late final String name;
   late int xp;
 
-  DynamicPlayerClass(String name, int xp) {
-    this.name = name;
-    this.xp = xp;
-  }
+  // DynamicPlayerClass(String name, int xp) {
+  //   this.name = name;
+  //   this.xp = xp;
+  // }
+
+  // constructor 단순화
+  DynamicPlayerClass(this.name, this.xp);
 
   void status() {
     print("name: \"${name}\", xp: $xp");
