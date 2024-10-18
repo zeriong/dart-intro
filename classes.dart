@@ -37,9 +37,9 @@ class DynamicPlayerClass {
 class NamedArgUserClass {
   // final로 상수 선언
   final String name;
-  int xp;
+  int xp, age; // age와 xp 모두 int형태로 콤마를 넣어 같이 정의 가능
   String team;
-  int age;
+  // int age;
 
   // named argument를 활용한 constructor
   NamedArgUserClass({
