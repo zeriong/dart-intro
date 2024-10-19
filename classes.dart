@@ -52,6 +52,25 @@ class NamedArgUserClass {
   void status() {
     print("name: \"$name\", xp: $xp, team: \"$team\", age: $age");
   }
+
+  /** named constructors */
+  NamedArgUserClass.createBluePlayer({
+    required String name,
+    required int age,
+  })  : this.name = name,
+        this.age = age,
+        this.team = "blue",
+        this.xp = 0;
+  /** named constructors */
+  NamedArgUserClass.createRedPlayer({
+    required String name,
+    required int age,
+  })  : this.name = name,
+        this.age = age,
+        this.team = "red",
+        this.xp = 0;
+
+  void createRedPlayer() {}
 }
 
 /** Main Method */
@@ -81,4 +100,17 @@ void main() {
   );
   // named argument Class status 출력
   namedArgUserClass.status();
+
+  /** */
+  var bluePlayer = NamedArgUserClass.createBluePlayer(
+    name: "blueman",
+    age: 8,
+  );
+  var redPlayer = NamedArgUserClass.createRedPlayer(
+    name: "redman",
+    age: 60,
+  );
+
+  bluePlayer.status();
+  redPlayer.status();
 }
