@@ -61,6 +61,7 @@ class NamedArgUserClass {
         this.age = age,
         this.team = "blue",
         this.xp = 0;
+
   /** named constructors */
   NamedArgUserClass.createRedPlayer({
     required String name,
@@ -69,8 +70,6 @@ class NamedArgUserClass {
         this.age = age,
         this.team = "red",
         this.xp = 0;
-
-  void createRedPlayer() {}
 }
 
 /** Main Method */
@@ -113,4 +112,16 @@ void main() {
 
   bluePlayer.status();
   redPlayer.status();
+
+  // 내부적으로 인스턴스를 선언할 때
+  // cascade operator를 활용하여 this문을 생략 가능
+  var zeriong =
+      NamedArgUserClass(name: "zeriong", xp: 100, team: "biseok", age: 29)
+        ..age = 123
+        ..team = "biseok"
+        ..xp = 120666;
+  // 데이터를 받아오고 인스턴스를 만들 때 데이터 삽입을
+  // 명료하게 나타낼 수 있음
+
+  zeriong.status();
 }
